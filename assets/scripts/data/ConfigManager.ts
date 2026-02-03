@@ -1,4 +1,4 @@
-import { _decorator, resources, JsonAsset } from 'cc';
+ï»¿import { _decorator, resources, JsonAsset } from 'cc';
 import { ICardConfig } from './CardDefine';
 
 export class ConfigManager {
@@ -10,42 +10,42 @@ export class ConfigManager {
         return this._instance;
     }
 
-    // Ê¹ÓÃ Map ´æ´¢£¬·½±ãÍ¨¹ı ID ¿ìËÙ²éÕÒ
+    // ä½¿ç”¨ Map å­˜å‚¨ï¼Œæ–¹ä¾¿é€šè¿‡ ID å¿«é€ŸæŸ¥æ‰¾
     private _cardConfigs: Map<number, ICardConfig> = new Map();
 
     /**
-     * ¼ÓÔØ Card_info.json
-     * @param callback ¼ÓÔØÍê³ÉºóµÄ»Øµ÷
+     * åŠ è½½ Card_info.json
+     * @param callback åŠ è½½å®Œæˆåçš„å›è°ƒ
      */
     public loadCardConfig(callback: () => void) {
-        // È·±£ÄãµÄÎÄ¼şÔÚ assets/resources/json/Card_info.json
+        // ç¡®ä¿ä½ çš„æ–‡ä»¶åœ¨ assets/resources/json/Card_info.json
         resources.load('json/Card_info', JsonAsset, (err, asset) => {
             if (err) {
-                console.error("¼ÓÔØ¿¨Æ¬ÅäÖÃÊ§°Ü:", err);
+                console.error("åŠ è½½å¡ç‰‡é…ç½®å¤±è´¥:", err);
                 return;
             }
 
             const jsonArray = asset.json as ICardConfig[];
             
-            // ½«Êı×é×ª»¯Îª Map ½á¹¹
+            // å°†æ•°ç»„è½¬åŒ–ä¸º Map ç»“æ„
             jsonArray.forEach(config => {
                 this._cardConfigs.set(config.id, config);
             });
 
-            console.log(`³É¹¦¼ÓÔØ ${this._cardConfigs.size} ¸ö¿¨Æ¬ÅäÖÃ`);
+            console.log(`æˆåŠŸåŠ è½½ ${this._cardConfigs.size} ä¸ªå¡ç‰‡é…ç½®`);
             if (callback) callback();
         });
     }
 
     /**
-     * »ñÈ¡Ö¸¶¨ ID µÄ¿¨Æ¬ÅäÖÃ
+     * è·å–æŒ‡å®š ID çš„å¡ç‰‡é…ç½®
      */
     public getCardConfigById(id: number): ICardConfig | null {
         return this._cardConfigs.get(id) || null;
     }
 
     /**
-     * »ñÈ¡ËùÓĞÅäÖÃ£¨ÓÃÓÚÉÌµêÏÔÊ¾µÈ£©
+     * è·å–æ‰€æœ‰é…ç½®ï¼ˆç”¨äºå•†åº—æ˜¾ç¤ºç­‰ï¼‰
      */
     public getAllConfigs(): ICardConfig[] {
         return Array.from(this._cardConfigs.values());

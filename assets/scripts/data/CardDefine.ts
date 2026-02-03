@@ -1,8 +1,8 @@
-// CardDefine.ts
+ï»¿// CardDefine.ts
 export interface ICardConfig {
-    id: number;           // ¿¨Æ¬Î¨Ò» ID
-    name: number;         // ¶ÔÓ¦¶àÓïÑÔ±íÖĞµÄÃû³Æ ID
-    dis: number;          // ¶ÔÓ¦¶àÓïÑÔ±íÖĞµÄÃèÊö ID
-    sell_value: number;   // ÊÛÂô½ğ±ÒÊıÁ¿
-    output: number;       // Ã¿ÈÕ²ú³ö½ğ±ÒÊıÁ¿
+    id: number;           // å¡ç‰‡å”¯ä¸€ ID
+    name: number;         // å¯¹åº”å¤šè¯­è¨€è¡¨ä¸­çš„åç§° ID
+    dis: number;          // å¯¹åº”å¤šè¯­è¨€è¡¨ä¸­çš„æè¿° ID
+    sell_value: number;   // å”®å–é‡‘å¸æ•°é‡
+    output: number;       // æ¯æ—¥äº§å‡ºé‡‘å¸æ•°é‡
 }
