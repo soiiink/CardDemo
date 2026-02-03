@@ -9,28 +9,28 @@
     {
         "id": 1002,
         "name": 10002,
-        "dis": 20002,
+        "dis": 20001,
         "sell_value": 2,
         "output": 2
     },
     {
         "id": 1003,
         "name": 10003,
-        "dis": 20003,
+        "dis": 20001,
         "sell_value": 3,
         "output": 3
     },
     {
         "id": 1004,
         "name": 10004,
-        "dis": 20004,
+        "dis": 20001,
         "sell_value": 4,
         "output": 4
     },
     {
         "id": 1005,
         "name": 10005,
-        "dis": 20005,
+        "dis": 20001,
         "sell_value": 5,
         "output": 5
     }
